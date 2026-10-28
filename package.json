@@ -1,0 +1,27 @@
+{
+  "name": "3d-interior",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "convert": "obj2gltf -i assets/1.obj -o .cache/raw.glb && gltf-transform weld .cache/raw.glb .cache/welded.glb && gltf-transform simplify .cache/welded.glb .cache/simple.glb --error 0.0001 && gltf-transform meshopt .cache/simple.glb public/interior.glb && node scripts/textures.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.2",
+    "postprocessing": "^6.39.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
+    "@vitejs/plugin-react": "^6.1.2",
+    "obj2gltf": "^3.2.0",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.5"
+  }
+}

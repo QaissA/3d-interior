@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.cache/
+.vercel/
+# 487 MB of source OBJ/textures (1.obj > GitHub 100 MB limit); the app only needs public/
+assets/
